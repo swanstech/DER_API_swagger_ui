@@ -1,8 +1,8 @@
 from fastapi import APIRouter
 
-router = APIRouter(prefix="/demo", tags=["pentest"])
+demo = APIRouter(prefix="/demo", tags=["demo"])
 
 
-@router.get("/demo")
-def pentest_hello():
+@demo.get("/hello")
+def demo_hello():
     return {"message": "Hello World for this demo"}
