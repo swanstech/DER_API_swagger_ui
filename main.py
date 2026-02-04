@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from api.pentest_results import pentest as pentest_router
-from api.init_demo import demo as demo_router
+from api.get_token import token as demo_router
 
-app = FastAPI(title="DER Dashboard APIs Overview")
+app = FastAPI(title="DER Dashboard APIs Overview", tags=["connect"])
 
 
 @app.get("/")
