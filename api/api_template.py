@@ -13,14 +13,26 @@ template = APIRouter(prefix="/template", tags=["template"])
 # the template.get means the api template will have a get request with the dir "/get_template"
 @template.get("/get_template")
 def get_template():
+
+    """
+    This is a get API template
+    """
+
     return {"message": "create template"}
 
 
-@template.post("/try_post")
+# there are two ways to add documentation to an API:
+# 1. following the below parameters
+# 2. use the doc strings in Python, please back to the previous api for any reference
+@template.post(
+        "/try_post",
+        description="This is a post template",
+        response_description="This is a template for doc response"
+        )
 def get_template():
     return {"message": "try out the post request"}
 
 
 # then after all of the setup in this file
-# if this file is newly created, we should go to main.py to register the router
-# now move to the main.py in the root dir
+# if this file is first created, we should go to main.py to register the router
+# now move to the main.py in the root dir, there will be the rest of the tutorials
