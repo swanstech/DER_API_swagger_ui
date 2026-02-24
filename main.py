@@ -10,7 +10,11 @@ from api.api_template import template as template_router
 app = FastAPI(title="DER Dashboard APIs Overview", tags=["connect"])
 
 
-@app.get("/")
+@app.get(
+        "/",
+        description="This API is used for initialisation testing",
+        response_description="The response demonstrate a successful API buildup"
+         )
 def root():
     return {"message": "Hello World"}
 

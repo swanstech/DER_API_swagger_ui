@@ -5,7 +5,11 @@ token = APIRouter(prefix="/token", tags=["token"])
 
 TOKEN_URL = "https://3.104.109.16:8443/auth/realms/swanstech/protocol/openid-connect/token"
 
-@token.post("/get_token")
+@token.post(
+        "/get_token",
+        description="By using user's credentials, this API will extract the token for further API access",
+        response_description="A token with other related user information"
+        )
 def get_token(
     username: str = Form(...),
     password: str = Form(...),
